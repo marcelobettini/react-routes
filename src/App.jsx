@@ -4,6 +4,7 @@ import Base from "./components/Base";
 import Data from "./components/Data";
 import Inicio from "./components/Inicio";
 import Details from "./components/Details";
+import NotFound from "./components/NotFound";
 
 function App() {
   return (
@@ -28,28 +29,25 @@ function App() {
         <Route exact path="/">
           <Base></Base>
         </Route>
-      </Switch>
 
-      <Switch>
-        <Route path="/contact">Contact Form goes here (no component)</Route>
-      </Switch>
+        <Route path="/contact">Contact Form goes here (no component yet)</Route>
 
-      <Switch>
         <Route path="/inicio/:variable">
           {/*ruta con param. Se pueden pasar varios /: /: /: etc.*/}
           <Inicio></Inicio>
         </Route>
-      </Switch>
 
-      <Switch>
         <Route path="/data">
           <Data></Data>
         </Route>
-      </Switch>
 
-      <Switch>
         <Route path="/details/:id">
           <Details></Details>
+        </Route>
+
+        <Route path="*">
+          {/*  //catch all route and renders NotFound */}
+          <NotFound></NotFound>
         </Route>
       </Switch>
     </BrowserRouter>
